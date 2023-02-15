@@ -1,0 +1,19 @@
+<!-- form_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Submitted Forms</h1>
+  <ul>
+    {% for form in forms %}
+      <li>{{ form.name }} - {{ form.email }} - {{ form.dob }} - {{ form.phone }}</li>
+    {% empty %}
+      <li>No forms have been submitted yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+
+<!-- we iterate over the forms queryset passed to the template, and display the fields for each form in an unordered list. 
+If no forms have been submitted yet, 
+we display a message indicating that no forms have been submitted.-->
